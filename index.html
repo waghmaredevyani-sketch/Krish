@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For You ❤️</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 80px;
+      overflow: hidden;
+    }
+
+    h1 { color: #fff; font-size: 40px; }
+    p { color: #fff; font-size: 22px; }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 10px;
+      position: relative;
+    }
+
+    .yes { background: #ff3366; color: white; }
+    .no { background: #fff; color: #ff3366; }
+
+    #gifBox {
+      display: none;
+      margin-top: 30px;
+    }
+
+    img {
+      width: 260px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Hey Krish ❤️</h1>
+<p>You make my world brighter every day ✨</p>
+<p>Will you be my Valentine? 💌</p>
+
+<div id="buttons">
+  <button class="yes" onclick="showLove()">Yes 💖</button>
+  <button class="no" id="noBtn" onmouseover="runAway()">No 🙈</button>
+</div>
+
+<div id="gifBox">
+  <h1>I knew it 😍💞</h1>
+  <p>You + Me = Forever 💕</p>
+  <img src="https://media.giphy.com/media/l2QDM9Jnim1YVILXa/giphy.gif">
+</div>
+
+<audio id="music">
+  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  function showLove() {
+    document.getElementById("buttons").style.display = "none";
+    document.getElementById("gifBox").style.display = "block";
+    document.getElementById("music").play();
+  }
+
+  function runAway() {
+    const btn = document.getElementById("noBtn");
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 100);
+    btn.style.position = "absolute";
+    btn.style.left = x + "px";
+    btn.style.top = y + "px";
+  }
+</script>
+
+</body>
+</html>
